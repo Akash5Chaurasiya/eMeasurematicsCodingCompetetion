@@ -1,0 +1,305 @@
+Description:
+
+1.With the given data object as a reference (at the end), this screen needs to be designed. (Please note the text added in red color in the image is the instruction/placeholder for the design which needs to be added). 
+2.The parcel elements from the given data need to be displayed in the sequential order based on their sequence, and the sequence to be displayed inside the parcel box created. Also the color of the parcels would depend upon the legend given, based on the group it belongs to.
+3.Also note that the design for the parcel elements should be DYNAMIC and NOT STATIC (or should not be hard coded in the HTML) from the given data object (the values in the data object are given for just as a starting reference, like even when a different data (with same format) is used, the design and the features should not be affected and work in the same way). So the code should work (with all the applied features) for all the possible cases, with any particular data given in the same format.
+4.At max 8-9 parcels to be visible at a time and the rest would be visible after scrolling.
+5.The header in the top would indicate the groups of the below parcels it belongs to. 6.The header for the parcels of the same group and in sequential order are to be grouped and shown together, with the group name in the center of the header. 
+7.There is an input field below and a select option, to allow the user to enter a new parcel for a particular group by using the actionable buttons.
+8.There should be a facility to click on the parcels which would highlight the selected parcel as shown in figure and the selection should be visible in the below container as “Selected parcel”. By default the parcels will be unselected. Clicking on the selected parcel again should make the make as unselected and the below Selected Parcel field should become blank. At any point of time upon clicking any parcel element for the selection, the below name input and the location group selection should come to its initial state with empty values.
+There will be several actionable buttons below:
+      a.Add After: This would be used to add a new parcel after any particular parcel. 
+    The user would need to select an existing parcel (without any selection, if this  
+    button is clicked there should be an alert stating that the user needs to select 
+    a parcel first). The user would then enter the name in the input box and select 
+    the group location from the dropdown and then click on add after, which would 
+    thereby add the new parcel (with the entered name, group color and the sequence) 
+    after the selected parcel. This step should create a new parcel object with a 
+    new id and the sequence of the current and the subsequent parcels in the data 
+    array should be updated. The group header should also be adjusted accordingly.
+
+    b.Add Before: This would be used to add a new parcel before any particular parcel. 
+    The user would need to select an existing parcel (without any selection, if this  
+    button is clicked there should be an alert stating that the user needs to select 
+    a parcel first). The user would then enter the name in the input box and select 
+    the group location from the dropdown and then click on add before, which would 
+    thereby add the new parcel (with the entered name, group color and the 
+    sequence) before the selected parcel. This step should create a new parcel 
+    object with a new id and the sequence of the current and the subsequent 
+    parcels in the data array should be updated. The group header should also 
+    be adjusted accordingly.
+
+    c.Replace: This would be used to replace a parcel with a new parcel. The       
+    user       would need to select an existing parcel (without any selection, if  
+    this  button is clicked there should be an alert stating that the user needs to 
+    select a parcel first). The user would then enter the name in the input box and 
+    select the group location from the dropdown and then click on replace, which would 
+    thereby replace the parcel with the newly entered parcel data. This step should 
+    create a new parcel object with a new id and the given data array should also be 
+    updated accordingly. The group header should also be adjusted accordingly.
+    
+    d.Delete: This would be used to delete a particular parcel. It should work only 
+    when a parcel is selected, else show an alert of selecting a parcel. The main data 
+    array should also be updated accordingly. The group header should also be adjusted 
+    accordingly.
+   
+    f.Refresh: This should draw the parcels on the basis of the original data given. 
+    Everything should go back to its initial state, all parcels unselected by default.
+    
+    g.Show Final: This would print the current data object (final array object at that 
+    point of time) in the console.
+Note: 
+
+After every actionable operation, the change should be done in the object array as well as the display of the parcel elements.
+The sequence should be updated for the elements accordingly after each action. The parcels should always be in the sequential order at any given point.
+The design/code should be such that if another data object with similar elements and keys are given, the design should work the same way. 
+Upon addition, deletion and replacement of the parcels, the group header should be adjusted accordingly.
+ 
+
+Below is the sample data object to be implemented.
+
+ 
+
+var data = [
+
+    {
+
+        id: 10,
+
+        name: "PARCEL1",
+
+        sequence: 1,
+
+        group: "Mumbai"
+
+    },
+
+    {
+
+        id: 11,
+
+        name: "PARCEL2",
+
+        sequence: 2,
+
+        group: "Mumbai"
+
+    },
+
+    {
+
+        id: 13,
+
+        name: "PARCEL3",
+
+        sequence: 3,
+
+        group: "Mumbai"
+
+    },
+
+    {
+
+        id: 19,
+
+        name: "PARCEL4",
+
+        sequence: 4,
+
+        group: "Delhi"
+
+    },
+
+    {
+
+        id: 18,
+
+        name: "PARCEL5",
+
+        sequence: 5,
+
+        group: "Delhi"
+
+    },
+
+    {
+
+        id: 21,
+
+        name: "PARCEL6",
+
+        sequence: 6,
+
+        group: "Kolkata"
+
+    },
+
+    {
+
+        id: 12,
+
+        name: "PARCEL7",
+
+        sequence: 7,
+
+        group: "Kolkata"
+
+    },
+
+    {
+
+        id: 22,
+
+        name: "PARCEL8",
+
+        sequence: 8,
+
+        group: "Kolkata"
+
+    },
+
+    {
+
+        id: 23,
+
+        name: "PARCEL9",
+
+        sequence: 9,
+
+        group: "Kolkata"
+
+    },
+
+    {
+
+        id: 24,
+
+        name: "PARCEL10",
+
+        sequence: 10,
+
+        group: "Mumbai"
+
+    },
+
+    {
+
+        id: 25,
+
+        name: "PARCEL11",
+
+        sequence: 11,
+
+        group: "Mumbai"
+
+    },
+
+    {
+
+        id: 31,
+
+        name: "PARCEL12",
+
+        sequence: 12,
+
+        group: "Mumbai"
+
+    },
+
+    {
+
+        id: 34,
+
+        name: "PARCEL13",
+
+        sequence: 13,
+
+        group: "Mumbai"
+
+    },
+
+    {
+
+        id: 35,
+
+        name: "PARCEL14",
+
+        sequence: 14,
+
+        group: "Delhi"
+
+    },
+
+    {
+
+        id: 41,
+
+        name: "PARCEL15",
+
+        sequence: 15,
+
+        group: "Delhi"
+
+    },
+
+    {
+
+        id: 42,
+
+        name: "PARCEL16",
+
+        sequence: 16,
+
+        group: "Delhi"
+
+    },
+
+    {
+
+        id: 43,
+
+        name: "PARCEL17",
+
+        sequence: 17,
+
+        group: "Delhi"
+
+    },
+
+    {
+
+        id: 44,
+
+        name: "PARCEL18",
+
+        sequence: 18,
+
+        group: "Kolkata"
+
+    },
+
+    {
+
+        id: 53,
+
+        name: "PARCEL19",
+
+        sequence: 19,
+
+        group: "Kolkata"
+
+    },
+
+    {
+
+        id: 57,
+
+        name: "PARCEL20",
+
+        sequence: 20,
+
+        group: "Kolkata"
+
+    }
+
+];
