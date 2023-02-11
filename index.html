@@ -1,0 +1,36 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Manager By Akash Chaurasiya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+      <h1>Parcel Manager </h1>
+      <h4 style="text-align: right;": 50px;>By:-Akash Chaurasiya</h4>
+    </div>
+    <div id="parcel-container">
+    </div>
+    <div id="input-container">
+        <input type="text" id="parcel-name" placeholder="Enter Parcel Name">
+        <select id="parcel-group">
+            <option value="">Select Group</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Kolkata">Kolkata</option>
+        </select>
+        <button id="add-after">Add After</button>
+        <button id="add-before">Add Before</button>
+        <button id="replace">Replace</button>
+        <button id="delete">Delete</button>
+        <button id="refresh">Refresh</button>
+        <button id="show-final">Show Final</button>
+    </div>
+    <div id="selected-parcel-container">
+        Selected Parcel: <span id="selected-parcel"></span>
+    </div>
+    <script src="Parcel.js"></script>
+</body>
+</html>
